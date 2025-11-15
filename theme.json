@@ -1,0 +1,19 @@
+{
+    "button": {
+        "colours": {
+            "normal_bg": "#676767",
+            "hovered_bg": "#424242",
+            "normal_text": "rgb(255, 255, 255)",
+            "hovered_text": "rgb(200, 200, 200)"
+        }
+    },
+    "spell_button": {
+        "colours": {
+            "normal_bg": "#17C620",
+            "hovered_bg": "#018A08",
+            "normal_text": "#393939",
+            "hovered_text": "#000000"
+        }
+    }
+
+}
