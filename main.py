@@ -1,8 +1,5 @@
 import pygame
 import pygame_gui
-
-print("hello, world!")
-
 pygame.init()
 
 
@@ -12,20 +9,19 @@ window_surface = pygame.display.set_mode((800, 600))
 
 
 background = pygame.Surface((800, 600))
+background.fill(pygame.Color("#000000"))
 
-background.fill(pygame.Color("#23D17D"))
+manager = pygame_gui.ui_manager.UIManager((800, 600))
 
-manager = pygame_gui.UIManager((800, 600))
 hello_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((350, 275), (100, 50)),
-                                             text='Say Hello', manager=manager)
-
+                                             text='Say Hello',
+                                             manager=manager)
 
 clock = pygame.time.Clock()
 is_running = True
 
 
 while is_running:
-
     time_delta = clock.tick(60)/1000.0
     for event in pygame.event.get():
 
@@ -33,13 +29,13 @@ while is_running:
             is_running = False
         if event.type == pygame_gui.UI_BUTTON_PRESSED:
             if event.ui_element == hello_button:
-                print('hello')
-
+                  print('Hello World!')
         manager.process_events(event)
-
+    
     manager.update(time_delta)
+
     window_surface.blit(background, (0, 0))
     manager.draw_ui(window_surface)
 
 
-pygame.display.update()
+    pygame.display.update()
